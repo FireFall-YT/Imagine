@@ -30,7 +30,7 @@ function Update () {
     transform.Translate(horizontalMovement, verticalMovement, 0);
    
 	 // A button
-    if (Input.GetKeyDown(KeyCode.Joystick2Button16) || Input.GetKeyDown(KeyCode.Joystick2Button0) || Input.GetKey(jumpKey)) {
+    if (Input.GetKeyDown(KeyCode.Joystick2Button16) || Input.GetKeyDown(KeyCode.Joystick2Button0) || Input.GetKey(KeyCode.RightShift)) {
     	if(!hasJumped){
     		Jump();
     		hasJumped = true;
