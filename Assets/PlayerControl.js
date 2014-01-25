@@ -38,7 +38,6 @@ function Update () {
     		Jump();
     		hasJumped = true;
     	}
-    	//gameObject.renderer.material.color = Color.green;
     }
     
     // X button, 2 (Windows) and 18 (Mac)
