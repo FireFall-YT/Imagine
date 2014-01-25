@@ -24,11 +24,13 @@ function Update () {
     var horizontalMovement : float = Input.GetAxis ("Horizontal") * speed;
     
     // Multiply by delta time
-    verticalMovement *= Time.deltaTime;
-    horizontalMovement *= Time.deltaTime;
+    //verticalMovement *= Time.deltaTime;
+    //horizontalMovement *= Time.deltaTime;
    
     // Move the thing! 
-    transform.Translate(horizontalMovement, verticalMovement, 0);
+    //transform.Translate(horizontalMovement, verticalMovement, 0);
+    rigidbody.velocity.z = verticalMovement;
+    rigidbody.velocity.x = horizontalMovement;
    
 	 // A button
     if (Input.GetKeyDown(KeyCode.Joystick1Button16) || Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKey(jumpKey)) {
