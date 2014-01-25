@@ -131,11 +131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2d42a36cc92044f8de6170d43af766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveUp: 119
-  moveDown: 115
-  moveLeft: 97
-  moveRight: 100
   speed: 10
+  jumpSpeed: 300
+  hasJumped: 0
+  jumpKey: 0
 --- !u!212 &554347751
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -338,9 +337,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 1713349557}
   - 212: {fileID: 1713349556}
-  - 114: {fileID: 1713349555}
   - 54: {fileID: 1713349558}
   - 65: {fileID: 1713349559}
+  - 114: {fileID: 1713349555}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -356,14 +355,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713349554}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a2d42a36cc92044f8de6170d43af766, type: 3}
+  m_Script: {fileID: 11500000, guid: a9f6a243319844a1399ffd70d243d435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveUp: 119
-  moveDown: 115
-  moveLeft: 97
-  moveRight: 100
   speed: 10
+  jumpSpeed: 10000
+  hasJumped: 0
+  jumpKey: 0
 --- !u!212 &1713349556
 SpriteRenderer:
   m_ObjectHideFlags: 0
