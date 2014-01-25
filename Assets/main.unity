@@ -339,8 +339,8 @@ GameObject:
   - 4: {fileID: 1713349557}
   - 212: {fileID: 1713349556}
   - 54: {fileID: 1713349558}
-  - 65: {fileID: 1713349559}
   - 114: {fileID: 1713349555}
+  - 136: {fileID: 1713349559}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -384,7 +384,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 4a73892379c034a299cb7338cdc1f234, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c9aad02d193000e4f979cd841381bf3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1713349557
 Transform:
@@ -393,7 +393,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1713349554}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 0, y: 7.38995028, z: -3.12876864e-07}
+  m_LocalPosition: {x: 1.33270144, y: 1.9679122, z: -8.70271265e-07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -412,8 +412,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &1713349559
-BoxCollider:
+--- !u!136 &1713349559
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -421,6 +421,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.59000015, y: 6.48000193, z: .200000048}
+  m_Radius: .519999981
+  m_Height: 1.28000033
+  m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
