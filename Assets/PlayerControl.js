@@ -46,8 +46,7 @@ function Update () {
 
 function OnCollisionEnter(collision: Collision){
 	for(var contact : ContactPoint in collision.contacts){
-		if(contact.otherCollider.name == "BG"){
-			print("We hit the BG!");
+		if(contact.otherCollider.tag == "floor" || contact.otherCollider.tag == "platform"){
 			hasJumped = false;
 		}
 		// Visualize the contact point
