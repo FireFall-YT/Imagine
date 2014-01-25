@@ -46,7 +46,7 @@ function Update () {
 
 function OnCollisionEnter(collision: Collision){
 	for(var contact : ContactPoint in collision.contacts){
-		if(contact.otherCollider.name == "BG"){
+		if(contact.otherCollider.tag == "floor" || contact.otherCollider.tag == "platform"){
 			print("Player 1 hit the BG!");
 			hasJumped = false;
 		}
