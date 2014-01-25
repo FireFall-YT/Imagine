@@ -5,6 +5,7 @@ var jumpSpeed : float = 10000.0;
 var hasJumped : boolean = false;
 
 var jumpKey : KeyCode;
+var attackKey : KeyCode;
 
 function Jump(){
 	rigidbody.AddForce(Vector3.up * jumpSpeed);
@@ -38,8 +39,8 @@ function Update () {
     	//gameObject.renderer.material.color = Color.green;
     }
     
-    // X button, 2 and 18
-    if (Input.GetKeyDown(KeyCode.Joystick1Button18) || Input.GetKeyDown(KeyCode.Joystick1Button2)) {
+    // X button, 2 (Windows) and 18 (Mac)
+    if (Input.GetKeyDown(KeyCode.Joystick1Button18) || Input.GetKeyDown(KeyCode.Joystick1Button2) || Input.GetKeyDown(attackKey)) {
     	gameObject.renderer.material.color = Color.yellow;
     }
 }

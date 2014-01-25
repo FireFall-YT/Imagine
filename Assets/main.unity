@@ -136,6 +136,7 @@ MonoBehaviour:
   jumpSpeed: 400
   hasJumped: 0
   jumpKey: 32
+  attackKey: 102
 --- !u!212 &554347751
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -359,10 +360,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f6a243319844a1399ffd70d243d435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  jumpSpeed: 10000
+  speed: 5
+  jumpSpeed: 400
   hasJumped: 0
-  jumpKey: 0
+  jumpKey: 304
+  attackKey: 92
 --- !u!212 &1713349556
 SpriteRenderer:
   m_ObjectHideFlags: 0
