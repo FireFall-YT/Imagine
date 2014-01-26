@@ -691,7 +691,7 @@ MonoBehaviour:
   speed: 5
   jumpSpeed: 400
   hasJumped: 0
-  animator: {fileID: 0}
+  animator: {fileID: 1713349560}
   upAnim: RedGirlWalkUp
   downAnim: RedGirlWalkDown
   leftAnim: RedGirlWalkLeft
@@ -699,7 +699,7 @@ MonoBehaviour:
   idleUpAnim: RedGirlIdleUp
   idleDownAnim: RedGirlIdleDown
   idleLeftAnim: RedGirlIdleLeft
-  idleRightAnim: RedGirlidleRight
+  idleRightAnim: RedGirlIdleRight
   lastAnim: 
   jumpKey: 0
   attackKey: 0
@@ -774,10 +774,10 @@ Animator:
   m_GameObject: {fileID: 1713349554}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b67fcc3a0f79ad49a212f3ebedf14ef, type: 2}
   m_CullingMode: 0
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
+  m_ApplyRootMotion: 0
+  m_AnimatePhysics: 1
   m_HasTransformHierarchy: 1
 --- !u!1 &1762626396
 GameObject:
@@ -859,7 +859,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 2056482892}
   - 212: {fileID: 2056482894}
-  - 95: {fileID: 2056482893}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -884,20 +883,6 @@ Transform:
   - {fileID: 1713349557}
   - {fileID: 1339824863}
   m_Father: {fileID: 0}
---- !u!95 &2056482893
-Animator:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2056482891}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ef5eed28aae9a844397342e905797b8a, type: 2}
-  m_CullingMode: 0
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
-  m_HasTransformHierarchy: 1
 --- !u!212 &2056482894
 SpriteRenderer:
   m_ObjectHideFlags: 0
