@@ -46,7 +46,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: a57c2eb7e5cdffe478bf564938bdf6be, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 192, y: 96, z: 0}
+  m_Position: {x: 240, y: 96, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -95,6 +95,21 @@ State:
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
+--- !u!1102 &110261696
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: RedGirlIdleRight 0
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: f2ecb323603514b05b1ec8f48894da65, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 275, y: 209, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
 --- !u!1102 &110266682
 State:
   m_ObjectHideFlags: 3
@@ -119,7 +134,7 @@ State:
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 7ed31f142ed55104db3f76111b269f42, type: 2}
+  - {fileID: 7400000, guid: f2ecb323603514b05b1ec8f48894da65, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 240, y: 144, z: 0}
   m_IKOnFeet: 0
@@ -157,6 +172,7 @@ StateMachine:
   - {fileID: 110217838}
   - {fileID: 110225337}
   - {fileID: 110273519}
+  - {fileID: 110261696}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions: {}
