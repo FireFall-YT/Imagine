@@ -1,7 +1,5 @@
-﻿#pragma strict
-
+﻿
 function Start () {
-
 }
 
 var speed : float = 10.0;

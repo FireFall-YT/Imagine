@@ -113,27 +113,29 @@ GameObject:
   - 212: {fileID: 554347751}
   - 114: {fileID: 554347750}
   - 54: {fileID: 554347749}
-  - 136: {fileID: 554347748}
+  - 136: {fileID: 554347753}
+  - 95: {fileID: 554347748}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &554347748
-CapsuleCollider:
+--- !u!95 &554347748
+Animator:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 554347747}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .519999981
-  m_Height: 1.5
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 933c3ad3d4f2c994e977389f72ba8dd4, type: 2}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 0
+  m_AnimatePhysics: 1
+  m_HasTransformHierarchy: 1
 --- !u!54 &554347749
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -163,6 +165,16 @@ MonoBehaviour:
   speed: 5
   jumpSpeed: 400
   hasJumped: 0
+  animator: {fileID: 0}
+  upAnim: BlondeBoyWalkUp
+  downAnim: BlondeBoyWalkDown
+  leftAnim: BlondeBoyWalkLeft
+  rightAnim: BlondeBoyWalkRight
+  idleUpAnim: BlondeBoyIdleUp
+  idleDownAnim: BlondeBoyIdleDown
+  idleLeftAnim: BlondeBoyIdleLeft
+  idleRightAnim: BlondeBoyIdleRight
+  lastAnim: 
   jumpKey: 32
 --- !u!212 &554347751
 SpriteRenderer:
@@ -185,7 +197,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 1bbd69eaabf1c2d4fb0213f3c300e04b, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 6c2a65526b0095d4ea5eb88e682bad89, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &554347752
 Transform:
@@ -194,10 +206,23 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 554347747}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.85101247, z: -5.06964827}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -1.85898316, z: -5.0696497}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 2056482892}
+--- !u!136 &554347753
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554347747}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .178000003
+  m_Height: .5
+  m_Direction: 2
+  m_Center: {x: 0, y: -4.76837158e-07, z: -9.53674316e-07}
 --- !u!1 &599384825
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,6 +547,7 @@ GameObject:
   - 54: {fileID: 1713349558}
   - 114: {fileID: 1713349555}
   - 136: {fileID: 1713349559}
+  - 95: {fileID: 1713349560}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -537,12 +563,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713349554}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9f6a243319844a1399ffd70d243d435, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a2d42a36cc92044f8de6170d43af766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  jumpSpeed: 10000
+  speed: 5
+  jumpSpeed: 400
   hasJumped: 0
+  animator: {fileID: 0}
+  upAnim: RedGirlWalkUp
+  downAnim: RedGirlWalkDown
+  leftAnim: RedGirlWalkLeft
+  rightAnim: RedGirlWalkRight
+  idleUpAnim: RedGirlIdleUp
+  idleDownAnim: RedGirlIdleDown
+  idleLeftAnim: RedGirlIdleLeft
+  idleRightAnim: RedGirlidleRight
+  lastAnim: 
   jumpKey: 0
 --- !u!212 &1713349556
 SpriteRenderer:
@@ -565,7 +601,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: c9aad02d193000e4f979cd841381bf3e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 543cc470601c9cb4a9f3ac9fbceeefd6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1713349557
 Transform:
@@ -575,7 +611,7 @@ Transform:
   m_GameObject: {fileID: 1713349554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.0876169205, y: 1.8623395, z: -4.60823107}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 2056482892}
 --- !u!54 &1713349558
@@ -602,10 +638,24 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .519999981
-  m_Height: 1.5
+  m_Radius: .178000003
+  m_Height: .5
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -4.76837158e-07, z: -9.53674316e-07}
+--- !u!95 &1713349560
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1713349554}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
 --- !u!1 &2056482891
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +664,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2056482892}
+  - 212: {fileID: 2056482894}
+  - 95: {fileID: 2056482893}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -627,7 +679,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2056482891}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -637,3 +689,40 @@ Transform:
   - {fileID: 554347752}
   - {fileID: 1713349557}
   m_Father: {fileID: 0}
+--- !u!95 &2056482893
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2056482891}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ef5eed28aae9a844397342e905797b8a, type: 2}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
+--- !u!212 &2056482894
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2056482891}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}

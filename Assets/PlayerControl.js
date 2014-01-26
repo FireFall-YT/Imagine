@@ -1,8 +1,19 @@
-﻿#pragma strict
-
-var speed : float = 10.0;
-var jumpSpeed : float = 10000.0;
+﻿var speed : float = 5.0;
+var jumpSpeed : float = 400.0;
 var hasJumped : boolean = false;
+var animator : Animator;
+
+// Animation Tag Strings
+var upAnim : String;
+var downAnim : String;
+var	leftAnim : String;
+var rightAnim : String;
+var idleUpAnim : String;
+var idleDownAnim : String;
+var idleLeftAnim : String;
+var idleRightAnim : String;
+
+var lastAnim : String;
 
 var jumpKey : KeyCode;
 
@@ -10,24 +21,16 @@ function Jump(){
 	rigidbody.AddForce(Vector3.up * jumpSpeed);
 }
 
-
-/*function OnCollisionEnter(collision: Collision){
-	for(var contact : ContactPoint in collision.contacts){
-		Debug.DrawRay(ContactPoint.point, contact.normal, Color.white);
-	}
-}*/
+function Start() {
+	animator = gameObject.GetComponent("Animator");
+}
 
 function Update () {
 	
     var verticalMovement : float = Input.GetAxis ("Vertical") * speed;
     var horizontalMovement : float = Input.GetAxis ("Horizontal") * speed;
     
-    // Multiply by delta time
-    //verticalMovement *= Time.deltaTime;
-    //horizontalMovement *= Time.deltaTime;
-   
     // Move the thing! 
-    //transform.Translate(horizontalMovement, verticalMovement, 0);
     rigidbody.velocity.z = verticalMovement;
     rigidbody.velocity.x = horizontalMovement;
    
@@ -37,19 +40,67 @@ function Update () {
     		Jump();
     		hasJumped = true;
     	}
-    	//gameObject.renderer.material.color = Color.green;
     }
     
     // X button, 2 and 18
     if (Input.GetKeyDown(KeyCode.Joystick1Button18) || Input.GetKeyDown(KeyCode.Joystick1Button2)) {
     	gameObject.renderer.material.color = Color.yellow;
     }
+    
+    // Animation
+    if(rigidbody.velocity.z != 0 && rigidbody.velocity.x != 0){
+    	if(rigidbody.velocity.z > 0 && rigidbody.velocity.x > 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName(upAnim)){
+    		animator.Play(upAnim, 0, 1);
+    		lastAnim = upAnim;
+    	}else if(rigidbody.velocity.z < 0 && rigidbody.velocity.x > 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName(downAnim)){
+    		animator.Play(downAnim, 0, 1);
+    		lastAnim = downAnim;
+    	}else if(rigidbody.velocity.z < 0 && rigidbody.velocity.x < 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName(downAnim)){
+    		animator.Play(downAnim, 0, 1);
+    		lastAnim = downAnim;
+    	}else if(rigidbody.velocity.z > 0 && rigidbody.velocity.x < 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName(upAnim)){
+    		animator.Play(upAnim, 0, 1);
+    		lastAnim = upAnim;
+    	}
+    }else{
+    	if(rigidbody.velocity.z > 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName(upAnim)){
+    		animator.Play(upAnim, 0, 1);
+    		lastAnim = upAnim;
+    	}else if(rigidbody.velocity.z < 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName(downAnim)){
+    		animator.Play(downAnim, 0, 1);
+    		lastAnim = downAnim;
+    	}else if(rigidbody.velocity.x < 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName(leftAnim)){
+    		animator.Play(leftAnim, 0, 1);
+    		lastAnim = leftAnim;
+    	}else if(rigidbody.velocity.x > 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName(rightAnim)){
+    		animator.Play(rightAnim, 0, 1);
+    		lastAnim = rightAnim;
+    	}
+    }
+    
+    if(rigidbody.velocity.x == 0 && rigidbody.velocity.z == 0){
+    	switch(lastAnim){
+    		case upAnim:
+    			animator.Play(idleUpAnim, 0, 1);
+    			break;
+    		case downAnim:
+    			animator.Play(idleDownAnim, 0, 1);
+    			break;
+    		case leftAnim:
+    			animator.Play(idleLeftAnim, 0, 1);
+    			break;
+    		case rightAnim:
+    			animator.Play(idleRightAnim, 0, 1);
+    			break;
+    		default:
+    			break;
+    	}
+    }
 }
 
 function OnCollisionEnter(collision: Collision){
 	for(var contact : ContactPoint in collision.contacts){
 		if(contact.otherCollider.tag == "floor" || contact.otherCollider.tag == "platform"){
-			print("Player 1 hit the BG!");
 			hasJumped = false;
 		}
 		// Visualize the contact point

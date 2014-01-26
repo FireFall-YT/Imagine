@@ -1,8 +1,7 @@
-﻿#pragma strict
-
-var speed : float = 10.0;
+﻿var speed : float = 10.0;
 var jumpSpeed : float = 10000.0;
 var hasJumped : boolean = false;
+var animator : Animator;
 
 var jumpKey : KeyCode;
 
@@ -10,12 +9,9 @@ function Jump(){
 	rigidbody.AddForce(Vector3.up * jumpSpeed);
 }
 
-
-/*function OnCollisionEnter(collision: Collision){
-	for(var contact : ContactPoint in collision.contacts){
-		Debug.DrawRay(ContactPoint.point, contact.normal, Color.white);
-	}
-}*/
+function Start() {
+	animator = gameObject.GetComponent("Animator");
+}
 
 function Update () {
 	
@@ -23,11 +19,13 @@ function Update () {
     var horizontalMovement : float = Input.GetAxis ("Horizontal2") * speed;
     
     // Multiply by delta time
-    verticalMovement *= Time.deltaTime;
-    horizontalMovement *= Time.deltaTime;
+    //verticalMovement *= Time.deltaTime;
+    //horizontalMovement *= Time.deltaTime;
    
     // Move the thing! 
-    transform.Translate(horizontalMovement, verticalMovement, 0);
+    //transform.Translate(horizontalMovement, verticalMovement, 0);
+    rigidbody.velocity.z = verticalMovement;
+    rigidbody.velocity.x = horizontalMovement;
    
 	 // A button
     if (Input.GetKeyDown(KeyCode.Joystick2Button16) || Input.GetKeyDown(KeyCode.Joystick2Button0) || Input.GetKey(jumpKey)) {
@@ -41,6 +39,27 @@ function Update () {
     if (Input.GetKeyDown(KeyCode.Joystick2Button18) || Input.GetKeyDown(KeyCode.Joystick2Button2)) {
     	gameObject.renderer.material.color = Color.yellow;
     }
+    
+    if(rigidbody.velocity.z != 0 && rigidbody.velocity.x != 0){
+    	if(rigidbody.velocity.z > 0 && rigidbody.velocity.x > 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("RedGirlWalkUp"))
+    		animator.Play("RedGirlWalkUp", 0, 1);
+    	else if(rigidbody.velocity.z < 0 && rigidbody.velocity.x > 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("RedGirlWalkDown"))
+    		animator.Play("RedGirlWalkDown", 0, 1);
+    	else if(rigidbody.velocity.z < 0 && rigidbody.velocity.x < 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("RedGirlyWalkDown"))
+    		animator.Play("RedGirlWalkDown", 0, 1);
+    	else if(rigidbody.velocity.z > 0 && rigidbody.velocity.x < 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("RedGirlWalkUp"))
+    		animator.Play("RedGirlWalkUp", 0, 1);
+    }else{
+    	if(rigidbody.velocity.z > 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("RedGirlWalkUp"))
+    		animator.Play("RedGirlWalkUp", 0, 1);
+    	else if(rigidbody.velocity.z < 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("RedGirlWalkDown"))
+    		animator.Play("RedGirlWalkDown", 0, 1);
+    	else if(rigidbody.velocity.x < 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("RedGirlWalkLeft"))
+    		animator.Play("RedGirlWalkLeft", 0, 1);
+    	else if(rigidbody.velocity.x > 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("RedGirlWalkRight"))
+    		animator.Play("RedGirlWalkRight", 0, 1);
+    }
+    
 }
 
 function OnCollisionEnter(collision: Collision){
