@@ -4,6 +4,7 @@ var hasJumped : boolean = false;
 var animator : Animator;
 
 var jumpKey : KeyCode;
+var attackKey : KeyCode;
 
 function Jump(){
 	rigidbody.AddForce(Vector3.up * jumpSpeed);
@@ -26,18 +27,18 @@ function Update () {
     //transform.Translate(horizontalMovement, verticalMovement, 0);
     rigidbody.velocity.z = verticalMovement;
     rigidbody.velocity.x = horizontalMovement;
-   
+
 	 // A button
-    if (Input.GetKeyDown(KeyCode.Joystick2Button16) || Input.GetKeyDown(KeyCode.Joystick2Button0) || Input.GetKey(jumpKey)) {
+    if (Input.GetKeyDown(KeyCode.Joystick2Button16) || Input.GetKeyDown(KeyCode.Joystick2Button0) || Input.GetKey(KeyCode.RightShift)) {
     	if(!hasJumped){
     		Jump();
     		hasJumped = true;
     	}
     }
     
-    // X button, 2 and 18
-    if (Input.GetKeyDown(KeyCode.Joystick2Button18) || Input.GetKeyDown(KeyCode.Joystick2Button2)) {
-    	gameObject.renderer.material.color = Color.yellow;
+    // X button, 2 (Windows) and 18 (Mac)
+    if (Input.GetKeyDown(KeyCode.Joystick2Button18) || Input.GetKeyDown(KeyCode.Joystick2Button2) || Input.GetKeyDown(attackKey)) {
+    	gameObject.renderer.material.color = Color.magenta;
     }
     
     if(rigidbody.velocity.z != 0 && rigidbody.velocity.x != 0){
@@ -64,7 +65,7 @@ function Update () {
 
 function OnCollisionEnter(collision: Collision){
 	for(var contact : ContactPoint in collision.contacts){
-		if(contact.otherCollider.name == "BG"){
+		if(contact.otherCollider.tag == "floor" || contact.otherCollider.tag == "platform"){
 			print("Player 2 hit the BG!");
 			hasJumped = false;
 		}
