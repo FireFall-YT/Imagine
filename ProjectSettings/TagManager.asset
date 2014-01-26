@@ -16,8 +16,8 @@ TagManager:
   Builtin Layer 6: 
   Builtin Layer 7: 
   User Layer 8: Background
-  User Layer 9: Floor
-  User Layer 10: 
+  User Layer 9: Walls
+  User Layer 10: Floor
   User Layer 11: 
   User Layer 12: 
   User Layer 13: 
@@ -51,4 +51,8 @@ TagManager:
   - name: Floor
     userID: 2
     uniqueID: 3050291943
+    locked: 0
+  - name: Foreground
+    userID: 3
+    uniqueID: 80200129
     locked: 0
