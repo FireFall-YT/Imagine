@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Tile_Wood
-  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 10750, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -18,7 +18,7 @@ Material:
           name: _MainTex
         second:
           m_Texture: {fileID: 2800000, guid: bd2e8c7cff9ab4f5086d037cd04eae5c, type: 3}
-          m_Scale: {x: 1, y: 1}
+          m_Scale: {x: 50, y: 3}
           m_Offset: {x: 0, y: 0}
     m_Floats: {}
     m_Colors:

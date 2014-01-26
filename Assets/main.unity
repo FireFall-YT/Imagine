@@ -805,7 +805,7 @@ Transform:
   m_GameObject: {fileID: 1762626396}
   m_LocalRotation: {x: -.122787833, y: .122787811, z: -.696364284, w: .696364164}
   m_LocalPosition: {x: -9, y: -0, z: -0}
-  m_LocalScale: {x: 4, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 1, z: 1}
   m_Children:
   - {fileID: 508198832}
   m_Father: {fileID: 205428849}
@@ -834,7 +834,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: eb67b51a94dbb40e4b657b22a27f5997, type: 2}
+  - {fileID: 2100000, guid: 8564e83ccdcaf44808b6d903079c9e7b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -936,7 +936,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: eb67b51a94dbb40e4b657b22a27f5997, type: 2}
+  - {fileID: 2100000, guid: 8564e83ccdcaf44808b6d903079c9e7b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -973,7 +973,7 @@ Transform:
   m_GameObject: {fileID: 2138521185}
   m_LocalRotation: {x: -.122787848, y: -.122787818, z: .696364343, w: .696364224}
   m_LocalPosition: {x: 9, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 1, z: 1}
   m_Children:
   - {fileID: 20827937}
   m_Father: {fileID: 205428849}
