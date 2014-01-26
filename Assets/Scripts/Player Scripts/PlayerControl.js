@@ -23,6 +23,19 @@ var lastAnim : String;
 var jumpKey : KeyCode;
 var attackKey : KeyCode;
 
+var hasWeapon : boolean = false;
+var weap : GameObject;
+
+var verticalString : String;
+var horizontalString : String;
+var playerNum : int;
+
+var jumpKeyMac : KeyCode;
+var jumpKeyWindows : KeyCode;
+
+var attackKeyMac : KeyCode;
+var attackKeyWindows : KeyCode;
+
 function Jump(){
 	rigidbody.AddForce(Vector3.up * jumpSpeed);
 	jumpTimer = 10;
@@ -30,21 +43,24 @@ function Jump(){
 
 function Start() {
 	animator = gameObject.GetComponent("Animator");
+	weap.renderer.enabled = false;
+    weap.collider.enabled = false;
+    hasWeapon = false;
 }
 
 function Update () {
 
 	if(jumpTimer >0) jumpTimer--;
 	
-    var verticalMovement : float = Input.GetAxis ("Vertical") * speed;
-    var horizontalMovement : float = Input.GetAxis ("Horizontal") * speed;
+	 var verticalMovement : float = Input.GetAxis (verticalString) * speed;
+    var horizontalMovement : float = Input.GetAxis (horizontalString) * speed;
     
     // Move the thing! 
     rigidbody.velocity.z = verticalMovement;
     rigidbody.velocity.x = horizontalMovement;
    
 	 // A button
-    if (Input.GetKeyDown(KeyCode.Joystick1Button16) || Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKey(jumpKey)) {
+    if (Input.GetKeyDown(jumpKeyMac) || Input.GetKeyDown(jumpKeyWindows) || Input.GetKey(jumpKey)) {
     	if(!hasJumped  && jumpTimer <= 0){
     		Jump();
     		hasJumped = true;
@@ -52,8 +68,16 @@ function Update () {
     }
     
     // X button, 2 (Windows) and 18 (Mac)
-    if (Input.GetKeyDown(KeyCode.Joystick1Button18) || Input.GetKeyDown(KeyCode.Joystick1Button2) || Input.GetKeyDown(attackKey)) {
-    	gameObject.renderer.material.color = Color.yellow;
+    if (Input.GetKeyDown(attackKeyMac) || Input.GetKeyDown(attackKeyWindows) || Input.GetKeyDown(attackKey)) {
+   		weap.renderer.enabled = true;
+    	weap.collider.enabled = true;
+    	hasWeapon = true;    
+    }
+    
+    if (Input.GetKeyUp(attackKeyMac) || Input.GetKeyUp(attackKeyWindows) || Input.GetKeyUp(attackKey)) {	
+    	weap.renderer.enabled = false;
+    	weap.collider.enabled = false;
+    	hasWeapon = false;
     }
     
     // Animation
