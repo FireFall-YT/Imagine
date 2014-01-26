@@ -6,6 +6,8 @@ var animator : Animator;
 // jump timer
 var jumpTimer : int = 0; //When triggered, set to 10
 
+
+
 // Animation Tag Strings
 var upAnim : String;
 var downAnim : String;
@@ -111,6 +113,8 @@ function OnCollisionEnter(collision: Collision){
 		  || contact.otherCollider.tag == "Tile"){
 			hasJumped = false;
 		}
+		
+		
 		// Visualize the contact point
 		Debug.DrawRay(contact.point, contact.normal, Color.white);
 	}
