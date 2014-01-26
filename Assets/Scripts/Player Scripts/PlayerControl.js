@@ -3,6 +3,9 @@ var jumpSpeed : float = 400.0;
 var hasJumped : boolean = false;
 var animator : Animator;
 
+// jump timer
+var jumpTimer : int = 0; //When triggered, set to 10
+
 // Animation Tag Strings
 var upAnim : String;
 var downAnim : String;
@@ -20,6 +23,7 @@ var attackKey : KeyCode;
 
 function Jump(){
 	rigidbody.AddForce(Vector3.up * jumpSpeed);
+	jumpTimer = 10;
 }
 
 function Start() {
@@ -27,6 +31,8 @@ function Start() {
 }
 
 function Update () {
+
+	jumpTimer--;
 	
     var verticalMovement : float = Input.GetAxis ("Vertical") * speed;
     var horizontalMovement : float = Input.GetAxis ("Horizontal") * speed;
@@ -37,7 +43,7 @@ function Update () {
    
 	 // A button
     if (Input.GetKeyDown(KeyCode.Joystick1Button16) || Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKey(jumpKey)) {
-    	if(!hasJumped){
+    	if(!hasJumped  && jumpTimer <= 0){
     		Jump();
     		hasJumped = true;
     	}
@@ -101,7 +107,8 @@ function Update () {
 
 function OnCollisionEnter(collision: Collision){
 	for(var contact : ContactPoint in collision.contacts){
-		if(contact.otherCollider.tag == "floor" || contact.otherCollider.tag == "platform"){
+		if(contact.otherCollider.tag == "floor" || contact.otherCollider.tag == "platform"
+		  || contact.otherCollider.tag == "Tile"){
 			hasJumped = false;
 		}
 		// Visualize the contact point
