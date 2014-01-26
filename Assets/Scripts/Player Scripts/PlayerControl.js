@@ -32,7 +32,7 @@ function Start() {
 
 function Update () {
 
-	jumpTimer--;
+	if(jumpTimer >0) jumpTimer--;
 	
     var verticalMovement : float = Input.GetAxis ("Vertical") * speed;
     var horizontalMovement : float = Input.GetAxis ("Horizontal") * speed;
