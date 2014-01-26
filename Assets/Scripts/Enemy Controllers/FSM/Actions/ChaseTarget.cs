@@ -38,6 +38,9 @@ public class ChaseTarget : IAction {
 			currentVec = player2Pos;
 		}
 
+		if (Vector3.Distance (currentVec, thisPos) > 10)
+						return new Vector3 (0, 0, 0);
+
 		Vector3 movement = currentVec - thisPos;
 
 		movement = Vector3.Normalize(movement);

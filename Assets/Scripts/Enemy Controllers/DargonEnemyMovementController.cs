@@ -24,7 +24,7 @@ public class DargonEnemyMovementController : MonoBehaviour {
 	private List<Transition> waitList = new List<Transition>();
 	private Wait waiting = new Wait();
 	private Transition waitToShoot = new Transition();
-	private Timer waitTimer = new Timer(30);
+	private Timer waitTimer = new Timer(60);
 
 
 

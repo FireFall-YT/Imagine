@@ -45,6 +45,8 @@ public class ShootTarget :  IAction {
 			// Assign position
 			Transform shotTrans = shot.GetComponent<Transform>();
 			if(shotTrans != null) shotTrans.position = thisPos;
+
+			currentVec.y = thisPos.y;
 			
 			ProjectileScript proj = shot.GetComponent<ProjectileScript>();
 			if(proj != null){
