@@ -1,0 +1,9 @@
+License type: EDUCATION
+Product: Construct 2
+Licensed to: UC Santa Cruz
+Email: towenmil@ucsc.edu
+Comment: Strictly for use at UC Santa Cruz (United States)
+Timestamp: 1389300162
+Hash: 3B2EF1DCF240BA9868280A613415EF386C7C9B2CF36257A79
+
+This is an educational license valid for use on any number of computers at the named educational institute.  This license is valid for as long as the named institute is subscribed to Scirra's educational program.
